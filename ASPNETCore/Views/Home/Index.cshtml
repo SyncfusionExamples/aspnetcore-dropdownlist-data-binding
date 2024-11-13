@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    var data = new string[] { "Badminton", "Basketball", "Cricket", "Football", "Golf", "Gymnastics", "Hockey", "Tennis" };
+}
+@using Syncfusion.EJ2;
+@using Newtonsoft.Json
+@model ASPNETCore.Controllers.ControlName
+
+<h4>Array of simple data</h4>
+<div class="control-wrapper">
+	<div id="default" style='padding-top:75px;'>
+		<ejs-dropdownlist id="games" dataSource="@data" placeholder="Select a game" popupHeight="220px">
+		</ejs-dropdownlist>
+	</div>
+</div>
+
+<h4>Array of Json data</h4>
+<div class="row">
+	<div class="col-md-6 col-xl-6">
+		<div class="control-section form-group">
+			<label class="form-label fw-normal">Support Coordination </label>
+			<ejs-dropdownlist id="supportcoordinatorid" name="SupportCoordinatorId" cssClass="e-outline" dataSource="@Model.SupportCoordinatorDataList" placeholder="e.g. Basketball" allowFiltering="true" value="@Model.val">
+				<e-dropdownlist-fields text="Name" value="Code"></e-dropdownlist-fields>
+			</ejs-dropdownlist>
+		</div>
+	</div>
+</div>
+
+
